@@ -1,0 +1,130 @@
+->     git clone the project
+
+->  then push master first
+		 => git push -u origin master
+
+-> then create another branch for develop purpose
+		=> git branch -b develop
+
+-> then push this branch 
+
+		=> git push -u origin develop
+
+-> the install flow  https://danielkummer.github.io/git-flow-cheatsheet/
+
+-> git flow init  = to enable team-working
+
+
+-> git add feature branch to your local repo
+		=> git flow feature start change_logo
+
+-> then made changes then git add . -> git commit -> git push -u origin feature/change_logo  
+
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+git checkout to develop
+
+git pull
+
+git checkout to feature/.....
+
+git rebase develop
+
+git push -f
+
+then merge it
+
+
+
+--------------------------------------
+confilicts
+
+git checkout develop 
+git pull
+
+git checkout to feature/.....
+
+git rebase develop  ---> conflicts
+
+	then fix the confilicts and removeing the ======, HEAD 
+git add .
+
+git rebase --continue 
+
+
+git push -f
+
+then merge it
+
+
+in heroku Git Cli
+
+git checkout staging
+
+git pull origin staging
+
+git checkout testing-dep...
+
+git rebase staging
+
+( if conflict -> resolve it then: -> git add .  -> git rebase --continue )
+
+git push --force  heroku testing-deployment:master
+
+
+git push -u origin branchName
+git push -f -u origin customer-portal
+
+
+// stagin files or file
+git add /src/services/endPoints/index.js
+git commit -m "fixed----"
+
+// Discarding changes
+* git restore .
+* git restore index.html
+
+// removing last changes/commit with you having your chagnes.
+git reset HEAD~1
+
+
+//renaming branch
+* git branch -m branchName   -> renmaing current branch
+
+// removing branch
+* git branch -d test
+* git branch -D test  --> by force if it has anything to share 	with other branches
+
+// Remote
+* git remote rename heroku heroku-backend-test --> renaming a remote
+* git remote remove origin   --> removing origin
+* git remote add heroku-frontend-test https://git.heroku.com/startup-website.git  --> Adding remote version
+
+
+//putting changes aside for going to another branch:
+git stash ---> for delted and modified only
+git stash -u ---> for new files and all
+git stash list ---> view list of stashes
+git stash applly 0 ---> bring back the last stash 
+git stash show 0 ---> show changes the stashed files.
+git stash show -p 0 --> detailed show.
+git stash push -m "update" --> provide name or desc
+git stash branch new-branch 0 --> make branch from prev stash.
+git stash pop ---> get the last stash.
+git stash drop 0 ---> remove last stash.
+git stash clear --> remove all stash.
+
+STASHES 
+backend ----> 0 image uploading
+
+
+*** Restoring a deleted branch  ***
+git reflog --no-abbrev ----> get the last activity and find the sha of the last activity of deleted branch
+
+git checkout 838915  ---> go to that activy sha  
+  
+git switch -c test  ---> create a branch from that activyt
+

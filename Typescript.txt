@@ -26,7 +26,7 @@ let employee: {
   retire: (date: Date) => void;
 } = {
   id: 1,
-  name: "Mosh",
+  name: "Abokor",
   retire: (date: Date) => {},
 };
 
@@ -36,3 +36,53 @@ noImplicitAny:          When enabled, the compiler will warn you about variables
 noImplicitReturns:      When enabled, the compiler will check all code paths in a function to ensure they return a value.
 noUnusedLocals:         When enabled, the compiler will report unused local variables.
 noUnusedParameters:     When enabled, the compiler will report unused parameters.
+
+// Type alias
+type Employee = {
+  id: number;
+  name: string;
+  retire: (date: Date) => void;
+};
+
+// Union types
+let weight: number | string = 1;
+weight = "1kg";
+
+// Intersection types
+type UIWidget = Draggable & Droppable;
+
+// Literal types
+type Quantity = 50 | 100;
+
+// Nullable types
+let name: string | null = null;
+
+// Optional chaining (?.)
+customer?.birthdate?.getFullYear();
+customers?.[0];
+log?.("message");
+
+// Nullish coalescing operator
+someValue ?? 30 
+
+// Type assertion
+obj as Person 
+
+// The unknown type
+function render(document: unknown) {
+// We have to narrow down to a specific
+// type before we can perform any operations // on an unknown type.
+if (typeof document === 'string') {
+} }
+
+// The never type
+function processEvents(): never {
+// This function never returns because // it has an infinite loop.
+while (true) {}
+}
+
+
+// Compiler Options
+Option                    Description
+strictNullChecks:            When enabled, null and undefined will not be acceptable values for variables unless you explicitly declare them as nullable. So, you’ll get an error if you set a variable to null or undefined.
+allowUnreachableCode:        When set the false, reports error about unreachable code.

@@ -1,0 +1,38 @@
+// Cheat Sheet
+
+// Annotation
+let sales: number = 123_456_789;
+let numbers: number[] = [1, 2, 3];
+
+// Tuples;
+let user: [number, string] = [1, "Abokor"];
+
+// Enums;
+enum Size {
+  Small = 1,
+  Medium,
+  Large,
+}
+
+// Functions;
+function calculateTax(income: number): number {
+  return income * 0.2;
+}
+
+// Objects;
+let employee: {
+  id: number;
+  name: string;
+  retire: (date: Date) => void;
+} = {
+  id: 1,
+  name: "Mosh",
+  retire: (date: Date) => {},
+};
+
+// Compiler Options
+Option                 Description
+noImplicitAny:          When enabled, the compiler will warn you about variables that are inferred with the any type. You’ll then have to explicitly annotate them with any if you have a reason to do so.
+noImplicitReturns:      When enabled, the compiler will check all code paths in a function to ensure they return a value.
+noUnusedLocals:         When enabled, the compiler will report unused local variables.
+noUnusedParameters:     When enabled, the compiler will report unused parameters.

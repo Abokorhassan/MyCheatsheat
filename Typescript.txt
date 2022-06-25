@@ -346,3 +346,27 @@ function MinLength(length: number) {
 }
 class User { @MinLength(4) password: string;
 }
+
+// Exporting and importing
+// shapes.ts
+export class Circle {}
+export class Square {}
+// app.ts
+import { Circle, Square as MySquare } from './shapes'; 
+
+// Default exports
+// shapes.ts
+export default class Circle {}
+// app.ts
+import Circle from './shapes'; 
+
+// Wildcard imports
+// app.ts
+import * as Shapes from './shapes'; let circle = new Shapes.Circle();
+
+// Re-exporting
+// /shapes/index.ts
+export { Circle } from './circle';
+export { Square } from './square';
+// app.ts
+import { Circle, Square } from './shapes';
